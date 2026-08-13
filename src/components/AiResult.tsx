@@ -1,6 +1,7 @@
 import { Check, Copy, Info, Loader2, Sparkles } from "lucide-react";
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 import { Button } from "@/components/ui/button";
 
@@ -78,7 +79,7 @@ export function ResultPanel({
         {!loading && !error && result && (
           <>
             <div className="prose-kat">
-              <ReactMarkdown>{result}</ReactMarkdown>
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{result}</ReactMarkdown>
             </div>
             <div className="mt-6 border-t border-border pt-3">
               <Disclaimer />

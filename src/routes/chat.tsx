@@ -3,6 +3,7 @@ import { useServerFn } from "@tanstack/react-start";
 import { Bot, Loader2, SendHorizonal, User } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 import { AppShell, PageHeader } from "@/components/AppShell";
 import { Disclaimer } from "@/components/AiResult";
@@ -110,7 +111,7 @@ function ChatPage() {
               </div>
               <div className="min-w-0 flex-1 rounded-2xl border border-border bg-card px-4 py-3 shadow-card">
                 <div className="prose-kat">
-                  <ReactMarkdown>{m.content}</ReactMarkdown>
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{m.content}</ReactMarkdown>
                 </div>
               </div>
             </div>
