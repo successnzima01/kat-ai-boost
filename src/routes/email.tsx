@@ -46,9 +46,9 @@ const LENGTHS = ["Short (under 100 words)", "Medium (100-180 words)", "Detailed 
 function EmailPage() {
   const run = useServerFn(generateEmail);
   const [purpose, setPurpose] = useState("");
-  const [audience, setAudience] = useState(AUDIENCES[0]);
-  const [tone, setTone] = useState(TONES[0]);
-  const [length, setLength] = useState(LENGTHS[1]);
+  const [audience, setAudience] = useState<string>("Manager");
+  const [tone, setTone] = useState<string>("Professional");
+  const [length, setLength] = useState<string>("Medium (100-180 words)");
   const [context, setContext] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);

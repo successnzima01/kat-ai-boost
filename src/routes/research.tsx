@@ -44,7 +44,7 @@ const DEPTHS = ["Quick brief", "Standard briefing", "Deep dive"];
 function ResearchPage() {
   const run = useServerFn(runResearch);
   const [topic, setTopic] = useState("");
-  const [depth, setDepth] = useState(DEPTHS[1]);
+  const [depth, setDepth] = useState<string>("Standard briefing");
   const [angle, setAngle] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
